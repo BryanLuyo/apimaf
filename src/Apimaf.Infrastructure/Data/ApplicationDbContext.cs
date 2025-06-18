@@ -22,6 +22,10 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+        // TODO: Mapear nombres de tablas existentes
+        modelBuilder.Entity<Concesionario>().ToTable("concesionario");
+        modelBuilder.Entity<Sucursal>().ToTable("sucursal");
+
         // TODO: Configurar relación uno a muchos
         modelBuilder.Entity<Concesionario>()
             .HasMany(c => c.Sucursales)

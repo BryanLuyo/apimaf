@@ -26,6 +26,8 @@ src/
    dotnet build
    ```
 3. Revisar `src/Apimaf.WebAPI/appsettings.json` y ajustar la cadena de conexión si es necesario. Por defecto se usa un SQL Server en Azure.
+   El `ApplicationDbContext` ya mapea las entidades a las tablas existentes
+   `concesionario` y `sucursal`, por lo que no es necesario renombrarlas.
 4. Aplicar migraciones de Entity Framework Core (opcional según configuración):
    ```bash
    dotnet ef migrations add InitialCreate -p src/Apimaf.Infrastructure -s src/Apimaf.WebAPI
