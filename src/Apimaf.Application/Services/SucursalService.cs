@@ -16,11 +16,11 @@ public class SucursalService
         _repository = repository;
     }
 
-    // TODO: Obtiene las sucursales por concesionaria
-    public async Task<IEnumerable<SucursalDto>> GetByConcesionariaIdAsync(int concesionariaId)
+    // TODO: Obtiene las sucursales por concesionario
+    public async Task<IEnumerable<SucursalDto>> GetByConcesionarioIdAsync(int concesionarioId)
     {
-        var items = await _repository.GetByConcesionariaIdAsync(concesionariaId);
-        return items.Select(s => new SucursalDto(s.Id, s.IdConcesionaria, s.NomComercial));
+        var items = await _repository.GetByConcesionarioIdAsync(concesionarioId);
+        return items.Select(s => new SucursalDto(s.Id, s.IdConcesionario, s.NomComercial));
     }
 
     // TODO: Crea una nueva sucursal
@@ -28,7 +28,7 @@ public class SucursalService
     {
         var entity = new Sucursal
         {
-            IdConcesionaria = dto.IdConcesionaria,
+            IdConcesionario = dto.IdConcesionario,
             NomComercial = dto.NomComercial
         };
         await _repository.AddAsync(entity);

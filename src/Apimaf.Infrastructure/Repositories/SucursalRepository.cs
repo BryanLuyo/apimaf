@@ -17,9 +17,9 @@ public class SucursalRepository : ISucursalRepository
         _context = context;
     }
 
-    // TODO: Obtiene todas las sucursales de una concesionaria
-    public async Task<IEnumerable<Sucursal>> GetByConcesionariaIdAsync(int concesionariaId)
-        => await _context.Sucursales.Where(s => s.IdConcesionaria == concesionariaId).ToListAsync();
+    // TODO: Obtiene todas las sucursales de un concesionario
+    public async Task<IEnumerable<Sucursal>> GetByConcesionarioIdAsync(int concesionarioId)
+        => await _context.Sucursales.Where(s => s.IdConcesionario == concesionarioId).ToListAsync();
 
     // TODO: Crea una nueva sucursal
     public async Task AddAsync(Sucursal entity)

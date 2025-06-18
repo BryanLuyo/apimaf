@@ -13,10 +13,10 @@ var connectionString = builder.Configuration.GetConnectionString("Default") ?? s
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<ConcesionariaService>();
+builder.Services.AddScoped<ConcesionarioService>();
 builder.Services.AddScoped<SucursalService>();
 
-builder.Services.AddScoped<IConcesionariaRepository, ConcesionariaRepository>();
+builder.Services.AddScoped<IConcesionarioRepository, ConcesionarioRepository>();
 builder.Services.AddScoped<ISucursalRepository, SucursalRepository>();
 
 // TODO: Configurar Swagger
@@ -28,16 +28,16 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// TODO: Mapear endpoints de concesionarias
-app.MapGet("/concesionarias", async (ConcesionariaService service) =>
+// TODO: Mapear endpoints de concesionarios
+app.MapGet("/concesionarios", async (ConcesionarioService service) =>
 {
     return Results.Ok(await service.GetAllAsync());
 });
 
 // TODO: Mapear endpoints de sucursales
-app.MapGet("/concesionarias/{id}/sucursales", async (int id, SucursalService service) =>
+app.MapGet("/concesionarios/{id}/sucursales", async (int id, SucursalService service) =>
 {
-    return Results.Ok(await service.GetByConcesionariaIdAsync(id));
+    return Results.Ok(await service.GetByConcesionarioIdAsync(id));
 });
 
 app.Run();

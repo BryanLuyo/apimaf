@@ -1,9 +1,9 @@
 namespace Apimaf.Domain.Entities;
 
 /// <summary>
-/// Entidad principal de una concesionaria de autos.
+/// Entidad principal de un concesionario de autos.
 /// </summary>
-public class Concesionaria
+public class Concesionario
 {
     public int Id { get; set; }
     public int Cod { get; set; }
@@ -14,6 +14,6 @@ public class Concesionaria
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
-    // TODO: Lista de sucursales asociadas a la concesionaria
+    // TODO: Lista de sucursales asociadas al concesionario
     public ICollection<Sucursal> Sucursales { get; set; } = new List<Sucursal>();
 }

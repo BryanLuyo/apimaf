@@ -13,8 +13,8 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    // TODO: Tabla de Concesionarias
-    public DbSet<Concesionaria> Concesionarias => Set<Concesionaria>();
+    // TODO: Tabla de Concesionarios
+    public DbSet<Concesionario> Concesionarios => Set<Concesionario>();
     // TODO: Tabla de Sucursales
     public DbSet<Sucursal> Sucursales => Set<Sucursal>();
 
@@ -23,9 +23,9 @@ public class ApplicationDbContext : DbContext
         base.OnModelCreating(modelBuilder);
 
         // TODO: Configurar relación uno a muchos
-        modelBuilder.Entity<Concesionaria>()
+        modelBuilder.Entity<Concesionario>()
             .HasMany(c => c.Sucursales)
-            .WithOne(s => s.Concesionaria!)
-            .HasForeignKey(s => s.IdConcesionaria);
+            .WithOne(s => s.Concesionario!)
+            .HasForeignKey(s => s.IdConcesionario);
     }
 }

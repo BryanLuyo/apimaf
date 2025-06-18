@@ -1,9 +1,9 @@
-# API REST Concesionarias
+# API REST Concesionarios
 
 Este proyecto contiene una estructura de ejemplo para crear una API REST "full" con **.NET 8** siguiendo una arquitectura exagonal. Se usan las siguientes entidades:
 
-- **Concesionaria**
-- **Sucursal** (pertenece a una concesionaria)
+- **Concesionario**
+- **Sucursal** (pertenece a un concesionario)
 
 La API expone operaciones CRUD y está preparada para integrarse con **Swagger**.
 
@@ -41,7 +41,7 @@ src/
 
 La arquitectura se divide en varias capas:
 
-- **Dominio**: define las entidades `Concesionaria` y `Sucursal`, además de las interfaces de repositorio.
+- **Dominio**: define las entidades `Concesionario` y `Sucursal`, además de las interfaces de repositorio.
 - **Aplicación**: contiene los servicios que orquestan la lógica de negocio y exponen DTOs.
 - **Infraestructura**: implementa los repositorios usando Entity Framework Core y define el `DbContext`.
 - **WebAPI**: configura los controladores, la inyección de dependencias y Swagger.

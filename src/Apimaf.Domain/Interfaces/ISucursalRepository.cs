@@ -7,8 +7,8 @@ namespace Apimaf.Domain.Interfaces;
 /// </summary>
 public interface ISucursalRepository
 {
-    // TODO: Obtiene todas las sucursales de una concesionaria
-    Task<IEnumerable<Sucursal>> GetByConcesionariaIdAsync(int concesionariaId);
+    // TODO: Obtiene todas las sucursales de un concesionario
+    Task<IEnumerable<Sucursal>> GetByConcesionarioIdAsync(int concesionarioId);
 
     // TODO: Crea una nueva sucursal
     Task AddAsync(Sucursal entity);
