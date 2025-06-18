@@ -1,4 +1,5 @@
 using Apimaf.Application.Services;
+using Apimaf.Domain.Interfaces;
 using Apimaf.Infrastructure.Data;
 using Apimaf.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -15,8 +16,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<ConcesionariaService>();
 builder.Services.AddScoped<SucursalService>();
 
-builder.Services.AddScoped<ConcesionariaRepository>();
-builder.Services.AddScoped<SucursalRepository>();
+builder.Services.AddScoped<IConcesionariaRepository, ConcesionariaRepository>();
+builder.Services.AddScoped<ISucursalRepository, SucursalRepository>();
 
 // TODO: Configurar Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -24,11 +25,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // TODO: Mapear endpoints de concesionarias
 app.MapGet("/concesionarias", async (ConcesionariaService service) =>
