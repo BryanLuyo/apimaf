@@ -15,6 +15,7 @@ src/
   Apimaf.Application/     # DTOs y servicios de aplicación
   Apimaf.Infrastructure/  # Implementaciones (EF Core, repositorios)
   Apimaf.WebAPI/          # Proyecto Web API
+  tests/                  # Pruebas automatizadas
 ```
 
 ## Pasos para ejecutar
@@ -36,6 +37,10 @@ src/
    dotnet run --project src/Apimaf.WebAPI
    ```
 6. Abrir `https://localhost:{puerto}/swagger` para ver la documentación generada por Swagger.
+7. Ejecutar las pruebas (opcional):
+   ```bash
+   dotnet test
+   ```
 
 ## Descripción rápida
 

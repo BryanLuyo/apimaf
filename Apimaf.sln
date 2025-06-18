@@ -11,5 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apimaf.Infrastructure", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apimaf.WebAPI", "src/Apimaf.WebAPI/Apimaf.WebAPI.csproj", "{44444444-4444-4444-4444-444444444444}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apimaf.WebAPI.Tests", "tests/Apimaf.WebAPI.Tests/Apimaf.WebAPI.Tests.csproj", "{55555555-5555-5555-5555-555555555555}"
+EndProject
 Global
 EndGlobal

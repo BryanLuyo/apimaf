@@ -41,3 +41,5 @@ app.MapGet("/concesionarios/{id}/sucursales", async (int id, SucursalService ser
 });
 
 app.Run();
+
+public partial class Program { }
