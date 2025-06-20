@@ -1,0 +1,15 @@
+# Ignore build outputs
+**/bin/
+**/obj/
+
+# Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+
+# Ignore test results
+TestResults/
+
+# Others
+.env
+
